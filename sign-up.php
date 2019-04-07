@@ -3,7 +3,7 @@
     <head>
         <title>OURS</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-        <link rel="stylesheet" href="sign-up.css" type="text/css"/>
+        <link rel="stylesheet" href="css/sign-up.css" type="text/css"/>
     </head>
     <body>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>

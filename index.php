@@ -3,7 +3,7 @@
     <head>
         <title>OURS</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-        <link rel="stylesheet" href="index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css"/>
     </head>
     <body>
         <h3 id="welcome">Welcome to the Online University Registration System!</h3>
