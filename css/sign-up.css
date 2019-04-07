@@ -1,3 +1,8 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(https://pkpt.uol.edu.pk/portals/0/uol-pakpattan/assets/images/slider/lahore-campus.jpg);
+}
+
 #welcome {
     text-align: center;
 }

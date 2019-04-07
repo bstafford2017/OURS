@@ -1,18 +1,61 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(https://pkpt.uol.edu.pk/portals/0/uol-pakpattan/assets/images/slider/lahore-campus.jpg);
+}
+
 #welcome {
     text-align: center;
 }
 
 #sign-in-form {
-    height: 200px;
+    height: 275px;
     width: 350px;
-	background-color: rgb(230,230,230);
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(0,0,0,0.7);
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 10px rgba(0,0,0,0.8);
+    /*Center*/
+    text-align: center;
+    margin: 0px auto;
+    top: 50%;
+    margin-top: 7%;
+}
+
+a {
+    color: white;
 }
 
 input {
-    margin: 8px;
+    margin: 15px;
+}
+
+#submit {
+    width: 275px;
+    height: 35px;
 }
 
 #submit:hover {
-	background-color: rgb(0,0,0);
-    color: rgb(255,255,255);
+	background-color: rgb(215,215,215);
+    transition: 0.3s;
+}
+
+#username:hover {
+    background-color: rgb(215,215,215);
+    transition: 0.3s;
+}
+
+#password:hover {
+    background-color: rgb(215,215,215);
+    transition: 0.3s;
+}
+
+#footer {
+    text-align: center;
+    color: white;
+    background-color: rgb(0,0,0);
+    opacity: 0.7;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
