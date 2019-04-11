@@ -7,10 +7,13 @@ html {
     text-align: center;
 }
 
-#sign-up-form {
-    height: 400px;
-    width: 350px;
-	background-color: rgb(230,230,230);
+#signup_form {
+    height: 515px;
+    width: 450px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(0,0,0,0.7);
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 10px rgba(0,0,0,0.8);
 }
 
 input {
