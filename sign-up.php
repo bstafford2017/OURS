@@ -50,33 +50,40 @@
           });
         });
       </script>
-
-        <br><br><center><h2>Welcome to the Online University Registration System!</h2></br></br>
+        <center>
+        <br><br><h2>Welcome to the Online University Registration System!</h2>
           <form id="signup_form">
-              <center><h1>Register</h1>
-              <center><p><small><b>Fill up the following details to register.</b></small>
-              <center>Name:<br>
-              <input type="text" placeholder="Enter Name" id="name" required><br>
-              <center>Username:<br>
-              <input type="text" placeholder="Enter Username" id="username" required><br>
-              <!--<center>Email:<br>
-              <input type="text" placeholder="Enter Email" id="email" required><br>
-              -->
-              <center>Password:<br>
-              <input type="password" placeholder="Enter Password" id="password" required><br>
-			        <center>Confirm Password:<br>
-              <input type="password" placeholder="Enter Confirm Password" id="confirm-password" required><br><br>
-              <center>Status:
-              <select>
-                <option value="student">Student</option>
-                <option value="staff">Staff</option>
-                <option value="faculty">Faculty</option>
-              </select><br><br>
-              <input id="submit-button" type="submit" value="Create An Account">
-              <a href="index.php" style="text-decoration:none;">
-                <input type="button" value="Back" href="index.php" formnovali>
-              </a>
+				<h1>Register</h1>
+				<p><small><b>Fill up the following details to register.</b></small><br><br>
+				Name:<br>
+				<input type="text" placeholder="Enter Name" id="name" required><br><br>
+				Username:<br>
+				<input type="text" placeholder="Enter Username" id="username" required><br><br>
+				<!--<center>Email:<br>
+				<input type="text" placeholder="Enter Email" id="email" required><br>
+				-->
+				Password:<br>
+				<input type="password" placeholder="Enter Password" id="password" required><br><br>
+						Confirm Password:<br><br>
+				<input type="password" placeholder="Enter Confirm Password" id="confirm-password" required><br><br>
+				Status:
+				<select>
+					<option value="student">Student</option>
+					<option value="staff">Staff</option>
+					<option value="faculty">Faculty</option>
+				</select><br><br>
+				
+				<input id="submit-button" type="submit" value="Create An Account">
+				<a href="index.php" style="text-decoration:none;">
+					<input type="button" value="Back" href="index.php" formnovali>
+				</a>
         </form>
+        </center>
+        <h6 id="footer"> <b>Contact Us:</b><br>
+        Phone: xxx-xxx-xxxx<br>
+        Email: us@university.edu<br>
+        Address: 1111 North St.<br>State, US 50000<br>
+        </h6>
         <?php
         // Check if current username is being used
         if(isset($_POST['submit-butt'])){
@@ -89,7 +96,5 @@
         }
         ?>
     </body>
-
-
 </html>
 

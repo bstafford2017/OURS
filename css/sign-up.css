@@ -8,7 +8,7 @@ html {
 }
 
 #signup_form {
-    height: 515px;
+    height: 535px;
     width: 450px;
     border: 2px solid rgb(255, 255, 255);
     background-color: rgba(0,0,0,0.7);
@@ -16,11 +16,18 @@ html {
     box-shadow: 5px 10px rgba(0,0,0,0.8);
 }
 
-input {
-    margin: 8px;
-}
-
 #submit:hover {
 	background-color: rgb(0,0,0);
     color: rgb(255,255,255);
+}
+
+#footer {
+    text-align: center;
+    color: white;
+    background-color: rgb(0,0,0);
+    opacity: 0.7;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }

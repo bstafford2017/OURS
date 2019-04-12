@@ -6,20 +6,25 @@
         <link rel="stylesheet" href="css/index.css" type="text/css"/>
     </head>
     <body>
-        <h3 id="welcome">Welcome to the Online University Registration System!</h3>
+        <center>
+        <br><br><h2>Welcome to the Online University Registration System!</h2>
         <form id="sign-in-form">
-            <b>Username:</b><br>
-            <input type="text" id="username" required><br>
-             <b>Password:</b><br>
-            <input type="text" id="password" required><br>
-            <input type="submit" id="submit" value="Submit" required><br>
+            <h1>Login</h1>
+            Username:<br>
+            <input type="text" id="username" placeholder="Enter Username" required><br><br>
+            Password:<br>
+            <input type="password" id="password" placeholder="Enter Password" required><br><br><br>
+            <input type="submit" id="submit" value="Submit" required><br><br><br>
             <a href="sign-up.php">Do not have an account? Sign up today!</a>
         </form>
+        </center>
+
         <h6 id="footer"> <b>Contact Us:</b><br>
         Phone: xxx-xxx-xxxx<br>
         Email: us@university.edu<br>
         Address: 1111 North St.<br>State, US 50000<br>
         </h6>
+
         <?php
         // Needs merge with API
         if(isset($_POST['button'])){
