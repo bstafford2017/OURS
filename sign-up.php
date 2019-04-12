@@ -5,7 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link rel="stylesheet" href="css/sign-up.css" type="text/css"/>
     </head>
-    <body background= "https://pkpt.uol.edu.pk/portals/0/uol-pakpattan/assets/images/slider/lahore-campus.jpg">
+    <body>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
       <script>
         $(document).ready(function(){

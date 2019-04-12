@@ -28,16 +28,17 @@
         <?php
         // Needs merge with API
         if(isset($_POST['button'])){
-            $first = $_POST['first'];
-            $last = $_POST['last'];
-            $check = "SELECT * FROM users WHERE first = '$first' AND last = '$last'";
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $check = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
             $result = mysqli_query($con, $check);
             if($result->num_rows <= 0){
                 $sql = "INSERT INTO users VALUES ('$first', '$last')";
                 if(mysqli_query($con, $sql)){
                     echo 'Success!';
+                    header("Location: main.php");
                 } else {
-                    echo '<script type="text/javascript"> alert("Invalid") </script>';
+                    echo '<script type="text/javascript"> alert("Invalid username/password.") </script>';
                 }
             } else {
                 echo '<script type="text/javascript"> alert("This name already exists in the database!") </script>';
