@@ -69,7 +69,7 @@
             Password:<br>
             <input type="password" placeholder="Enter Password" id="password" required><br><br>
                 
-            Confirm Password:<br><br>
+            Confirm Password:<br>
             <input type="password" placeholder="Enter Confirm Password" id="confirm-password" required><br><br>
 
             Status:
