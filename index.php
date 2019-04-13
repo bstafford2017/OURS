@@ -3,11 +3,11 @@
     <head>
         <title>OURS</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-        <link rel="stylesheet" href="css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="css/index.css" type="text/css">
     </head>
     <body>
         <center>
-        <br><br><h2>Welcome to the Online University Registration System!</h2>
+        <br><br><h2 id="welcome">Welcome to the Online University Registration System!</h2><br>
         <form id="sign-in-form">
             <h1>Login</h1>
             Username:<br>
@@ -27,21 +27,16 @@
 
         <?php
         // Needs merge with API
-        if(isset($_POST['button'])){
+        if(isset($_POST['submit'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
             $check = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
             $result = mysqli_query($con, $check);
             if($result->num_rows <= 0){
-                $sql = "INSERT INTO users VALUES ('$first', '$last')";
-                if(mysqli_query($con, $sql)){
-                    echo 'Success!';
-                    header("Location: main.php");
-                } else {
-                    echo '<script type="text/javascript"> alert("Invalid username/password.") </script>';
-                }
+                echo '<script type="text/javascript"> alert("Invalid username/password.") </script>';
             } else {
-                echo '<script type="text/javascript"> alert("This name already exists in the database!") </script>';
+                echo 'Success!';
+                header("Location: main.php");
             }
         }
         ?>

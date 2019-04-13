@@ -3,6 +3,11 @@ html {
     background-image: url(https://jlgarchitects.com/wp-content/uploads/2018/07/Untitled-1.jpg);
 }
 
+#welcome{
+    color: white;
+    text-shadow: 2px 2px rgb(0,0,0,0.5);
+}
+
 #sign-in-form {
     height: 365px;
     width: 350px;
