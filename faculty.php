@@ -15,6 +15,7 @@
             <li style="float:right"><a href="index.php">Logout</a></li>
         </ul>
 
+        <h2 class="header" style="position:relative;left:390px;top:20px;">My Search</h2>
         <center>
         <div id="container">
             <form>

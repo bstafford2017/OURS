@@ -33,7 +33,7 @@
             $check = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
             $result = mysqli_query($con, $check);
             if($result->num_rows <= 0){
-                echo '<script type="text/javascript"> alert("Invalid username/password.") </script>';
+                echo '<script type="text/javascript"> alert("Invalid username/password.");</script>';
             } else {
                 echo 'Success!';
                 header("Location: main.php");

@@ -15,6 +15,32 @@
             <li style="float:right"><a href="index.php">Logout</a></li>
         </ul>
 
+        <h2 class="header" style="position:relative;left:85px;">Course Search</h2>
+        <div id="search">
+            <form>
+                Course ID:<br>
+                <input id="course-id" type="text" placeholder="Enter Course ID"><br><br>
+                Course Name:<br>
+                <input id="course-name" type="text" placeholder="Enter Course Name"><br><br>
+                Department:<br>
+                <select>
+                    <?php
+                        // Get departments from DB
+                    ?>
+                </select>
+                <input id="submit-button" type="submit" value="Search">
+            </form>
+        </div>
+        
+        <?php
+            // Find all courses for searched item
+        ?>
+
+        <h2 class="header" style="float:right;position:relative;right:235px;bottom:65px;">My Cart</h2>
+        <div id="cart">
+            None
+        </div>
+
         <h6 id="footer"> <b>Contact Us:</b><br>
         Phone: xxx-xxx-xxxx<br>
         Email: us@university.edu<br>
