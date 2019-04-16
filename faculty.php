@@ -3,7 +3,7 @@
     <head>
         <title>OURS</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-        <link rel="stylesheet" href="css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="css/faculty.css" type="text/css"/>
     </head>
     <body>
         <h2 id="welcome">Welcome User!</h2>
@@ -16,10 +16,12 @@
         </ul>
 
         <center>
-        <form>
-            <input id="search" type="text" placeholder="Search" required>
-            <input id="submit-button" type="submit" value="Submit">
-        </form>
+        <div id="container">
+            <form>
+                <input id="search" type="text" placeholder="Search for a faculty member . . ." required>
+                <input id="submit-button" type="submit" value="Submit">
+            </form>
+        </div>
         </center>
 
         <h6 id="footer"> <b>Contact Us:</b><br>

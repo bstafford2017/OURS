@@ -3,7 +3,7 @@
     <head>
         <title>OURS</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-        <link rel="stylesheet" href="css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="css/courses.css" type="text/css"/>
     </head>
     <body>
         <h2 id="welcome">Welcome User!</h2>
