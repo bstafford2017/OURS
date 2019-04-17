@@ -15,15 +15,15 @@
             <li style="float:right"><a href="index.php">Logout</a></li>
         </ul>
 
-        <h2 class="header" style="position:relative;left:390px;top:20px;">My Search</h2>
-        <center>
-        <div id="container">
-            <form>
-                <input id="search" type="text" placeholder="Search for a faculty member . . ." required>
-                <input id="submit-button" type="submit" value="Submit">
-            </form>
+        <div id="main-container">
+            <h2 class="header" style="">My Search</h2>
+            <div id="search-container">
+                <form>
+                    <input id="search" type="text" placeholder="Search for a faculty member . . ." required>
+                    <input id="submit-button" type="submit" value="Submit">
+                </form>
+            </div>
         </div>
-        </center>
 
         <h6 id="footer"> <b>Contact Us:</b><br>
         Phone: xxx-xxx-xxxx<br>
