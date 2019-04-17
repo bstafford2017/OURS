@@ -25,6 +25,28 @@
         Address: 1111 North St.<br>State, US 50000<br>
         </h6>
 
+        <script type="text/javascript">
+        
+        // 1. jQuery library in head or body
+        // 2. $.ajax{
+            // inputs here 
+            // e.g, id : $(#username).val()
+            
+        // }.done(response){
+            // response
+            // check data is existed or not
+            // if yes
+            // go to the main page
+            // otherwise
+            // alert
+
+        // }.fail(){
+            // alert 
+        // }
+
+
+
+        </script>
         <?php
         // Needs merge with API
         if(isset($_POST['submit'])){
