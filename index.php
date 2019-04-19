@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>OURS</title>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link rel="stylesheet" href="css/index.css" type="text/css">
     </head>
     <body>
@@ -24,43 +24,35 @@
         Email: us@university.edu<br>
         Address: 1111 North St.<br>State, US 50000<br>
         </h6>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+        <script>
+          $(document).ready(function(){
 
-        <script type="text/javascript">
-        
-        // 1. jQuery library in head or body
-        // 2. $.ajax{
-            // inputs here 
-            // e.g, id : $(#username).val()
-            
-        // }.done(response){
-            // response
-            // check data is existed or not
-            // if yes
-            // go to the main page
-            // otherwise
-            // alert
+            $('#sign-in-form').on('submit', function(){
+              $.ajax({
+                   type: 'POST',
+                   contentType: "application/json",
+                   url: 'api/signin.php',
+                   data : JSON.stringify({
+                     username : $('#username').val(),
+                     password : $('#password').val()
+                   })
+               }).done(function(data){
+                   if(data){
+                     // login success
+                     //alert("login success");
+                     location.replace("mainPage.php");
+                   }
 
-        // }.fail(){
-            // alert 
-        // }
+               }).fail(function() {
+                   alert( "login failed.");
+               });
+               // to prevent refreshing the whole page page
+               return false;
 
-
-
+            });
+          });
         </script>
-        <?php
-        // Needs merge with API
-        if(isset($_POST['submit'])){
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $check = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-            $result = mysqli_query($con, $check);
-            if($result->num_rows <= 0){
-                echo '<script type="text/javascript"> alert("Invalid username/password.");</script>';
-            } else {
-                echo 'Success!';
-                header("Location: main.php");
-            }
-        }
-        ?>
+
     </body>
 </html>

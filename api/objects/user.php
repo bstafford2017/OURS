@@ -7,7 +7,7 @@ class User{
     // object properties
     public $userid;
     public $username;
-    public $userEmail;
+    public $status;
     public $userPwd;
 
     // constructor
@@ -53,10 +53,10 @@ class User{
     function userExists(){
 
       // query to check if email exists
-      $this->userEmail=htmlspecialchars(strip_tags($this->userEmail));
+      $this->username=htmlspecialchars(strip_tags($this->username));
 
       //.$this->username.
-      $sql = "SELECT userid, username, userEmail, userPwd FROM User WHERE userEmail = '$this->userEmail'";
+      $sql = "SELECT * FROM Person WHERE name = '$this->username'";
       $stmt = $this->conn->prepare($sql);
 
       $stmt->execute();
@@ -67,11 +67,10 @@ class User{
           $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
           // assign values to object properties
-          $this->userid = $row['userid'];
-          $this->username = $row['username'];
-          $this->userEmail = $row['userEmail'];
-          $this->userPwd = $row['userPwd'];
-
+          $this->userid = $row['id'];
+          $this->username = $row['name'];
+          $this->status = $row['status'];
+          $this->userPwd = $row['password'];
           return true;
       }
 
@@ -94,6 +93,7 @@ class User{
           // assign values to object properties
           $this->userid = $row['userid'];
           $this->username = $row['username'];
+
           return true;
       }
 

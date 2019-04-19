@@ -27,7 +27,7 @@
   $data = json_decode(file_get_contents("php://input"));
 
   // set product property values
-  $user->userEmail = $data->email;
+  $user->username = $data->username;
   //echo ($user->userEmail);
 
   $user_exists = $user->userExists();
@@ -38,8 +38,8 @@
       $token = array(
         "data" => array(
             "id" => $user->userid,
-            "name" => $user->username,
-            "email" => $user->userEmail
+            "name" => $user->username
+
         )
       );
       http_response_code(200);

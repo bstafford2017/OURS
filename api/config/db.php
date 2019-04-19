@@ -1,9 +1,9 @@
 <?php
 class Database{
 
-  private $host = "127.0.0.1";
-  private $db_name = "db_hw2";
-  private $username = "root";
+  private $host = "undcsmysql.mysql.database.azure.com";
+  private $db_name = "joonhyeok_ahn";
+  private $username = "joonhyeok.ahn@undcsmysql";
   private $password = "password";
   public  $conn;
 
