@@ -12,11 +12,11 @@
   // get posted data
   $data = json_decode(file_get_contents("php://input"));
 
-
   //set product property values
+  $user->name = $data->name;
   $user->username = $data->username;
-  $user->userEmail= $data->email;
   $user->userPwd = $data->password;
+  $user->status = $data->status;
 
   $isUserCreated = $user->create();
 

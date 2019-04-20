@@ -6,6 +6,7 @@ class User{
 
     // object properties
     public $userid;
+    public $name;
     public $username;
     public $status;
     public $userPwd;
@@ -18,11 +19,12 @@ class User{
     function create(){
       try {
 
-        $sql ="CREATE TABLE IF NOT EXISTS User(
+        $sql ="CREATE TABLE IF NOT EXISTS `Person`(
           userid INT(6) UNSIGNED AUTO_INCREMENT,
+          name VARCHAR(30) NOT NULL,
           username VARCHAR(30) NOT NULL,
-          userEmail VARCHAR(30) NOT NULL,
           userPwd VARCHAR(30) NOT NULL,
+          status VARCHAR(10) NOT NULL,
           PRIMARY KEY (userid)
         )";
        $this->conn->exec($sql);
@@ -33,17 +35,18 @@ class User{
       }
 
       // sanitize
+      $this->name = htmlspecialchars(strip_tags($this->name));
       $this->username=htmlspecialchars(strip_tags($this->username));
-      $this->userEmail=htmlspecialchars(strip_tags($this->userEmail));
       $this->userPwd=htmlspecialchars(strip_tags($this->userPwd));
+      $this->status=htmlspecialchars(strip_tags($this->status));
 
-      $query = "INSERT INTO User(username, userEmail, userPwd) VALUES('$this->username', '$this->userEmail', '$this->userPwd')";
-      // $stmt = $this->conn->prepare($query);
+      $query = "INSERT INTO `Person`(name, username, password, status) VALUES('$this->name', '$this->username', '$this->userPwd', '$this->status')";
+
       if($this->conn->exec($query) === false){
-         print('Error inserting the user.');
+         console.log('Error inserting the user.');
          return false;
        }else{
-         print("New user is created");
+         console.log("New user is created");
          return true;
        }
 
@@ -55,8 +58,7 @@ class User{
       // query to check if email exists
       $this->username=htmlspecialchars(strip_tags($this->username));
 
-      //.$this->username.
-      $sql = "SELECT * FROM Person WHERE name = '$this->username'";
+      $sql = "SELECT * FROM Person WHERE username = '$this->username'";
       $stmt = $this->conn->prepare($sql);
 
       $stmt->execute();
@@ -68,7 +70,8 @@ class User{
 
           // assign values to object properties
           $this->userid = $row['id'];
-          $this->username = $row['name'];
+          $this->name = $row['name'];
+          $this->username = $row['usernmae'];
           $this->status = $row['status'];
           $this->userPwd = $row['password'];
           return true;
@@ -80,7 +83,6 @@ class User{
     function userExistsWithId(){
       // query to check if email exists
 
-      //.$this->username.
       $sql = "SELECT userid, username FROM User WHERE userid = '$this->userid'";
       $stmt = $this->conn->prepare( $sql );
 

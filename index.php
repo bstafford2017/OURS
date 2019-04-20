@@ -41,7 +41,7 @@
                    if(data){
                      // login success
                      //alert("login success");
-                     location.replace("mainPage.php");
+                     location.replace("main.php");
                    }
 
                }).fail(function() {
