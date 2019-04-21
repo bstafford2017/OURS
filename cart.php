@@ -16,6 +16,13 @@
             <li style="float:right"><a href="index.php">Logout</a></li>
         </ul>
 
+        <table>
+            <?php
+                // Check # of nums in query for 
+                // 'SELECT * FROM cart WHERE username = currentUserName'
+            ?>
+        </table>
+
         <h6 id="footer"> <b>Contact Us:</b><br>
         Phone: xxx-xxx-xxxx<br>
         Email: us@university.edu<br>

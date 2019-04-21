@@ -26,6 +26,36 @@
             </div>
         </div>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+        <script>
+        $(document).ready(function(){
+            $('#submit-button').click(function() {
+                $.ajax({
+                    type: 'GET',
+                    contentType: "application/json",
+                    url: 'api/faculty/search.php',
+                    data : {
+                        name : $('#search').val()
+                    }
+                }).done(function(resposne){
+                    //  $.each(response, function(index) {
+                    //    alert(response[index].isbn);
+                    //
+                    //    tr += "<tr><td><input type='checkbox' id='mycheckbox' value='"+(response[index].isbn)+"'></td>";
+                    //    tr += '<td><a href=bookDetailsPage.php?isbn='+(response[index].isbn)+'>'+response[index].title+'</a></td>';
+                    //    tr += '<td><input type="text" name = "quantity"></td>';
+                    //    //"'+quantity[response[index].isbn]+'"
+                    //    tr+= '</tr>';
+                    // });
+                    //
+                    // $('#bookTable').html(tr);
+                }).fail(function(){
+                    alert("No results for search");
+                });
+            });
+        });
+        </script>
+
         <h6 id="footer"> <b>Contact Us:</b><br>
         Phone: xxx-xxx-xxxx<br>
         Email: us@university.edu<br>
