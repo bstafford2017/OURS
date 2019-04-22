@@ -17,6 +17,41 @@
         </ul>
 
         <table>
+          <tr>
+            <th>a</th>
+            <th>a</th>
+            <th>a</th>
+          </tr>
+          <tr>
+            <th>a</th>
+            <th>a</th>
+            <th>a</th>
+          </tr>
+          <tr>
+            <th>a</th>
+            <th>a</th>
+            <th>a</th>
+          </tr>
+          <tr>
+            <th>a</th>
+            <th>a</th>
+            <th>a</th>
+          </tr>
+          <tr>
+            <th>a</th>
+            <th>a</th>
+            <th>a</th>
+          </tr>
+          <tr>
+            <th>a</th>
+            <th>a</th>
+            <th>a</th>
+          </tr>
+          <tr>
+            <th>a</th>
+            <th>a</th>
+            <th>a</th>
+          </tr>
             <?php
                 // Check # of nums in query for 
                 // 'SELECT * FROM cart WHERE username = currentUserName'
