@@ -78,7 +78,15 @@
             </select><br><br>
 
             <input id="submit-button" type="submit" value="Create An Account">
-
+            <button id="back-button" type="button">Back</button>
+            <script>
+            // Redirect user with back button
+            $(document).ready(function(){
+              $('#back-button').click(function(){
+                  location.href = "index.php";
+              });
+            });
+            </script>
           </form>
         </center>
 
