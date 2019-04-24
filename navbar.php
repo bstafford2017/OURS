@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/navbar.css" type="text/css"/>
 <ul>
     <li><a href="main.php">Home</a></li>
     <li><a href="courses.php">Courses</a></li>
