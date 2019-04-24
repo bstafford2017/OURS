@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
     $( "#loginBtn" ).click(function() {
-        // login 
+        // login
         return false;
     });
 

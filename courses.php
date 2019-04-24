@@ -7,14 +7,7 @@
     </head>
     <body>
         <h2 id="welcome">Welcome User!</h2>
-        <ul class="navbar">
-            <li><a href="main.php">Home</a></li>
-            <li><a href="courses.php">Courses</a></li>
-            <li><a href="cart.php">View Cart</a></li>
-            <li><a href="faculty.php">Faculty</a></li>
-            <li><a href="settings.php">Settings</a></li>
-            <li style="float:right"><a href="index.php">Logout</a></li>
-        </ul>
+        <?php include("navbar.php"); ?>
 
         <div id="search-container">
             <h2 class="header" style="">Course Search</h2>
@@ -33,70 +26,70 @@
             </div>
         </div>
 
+        <div id="search-result-container">
+          <table id="search-result-list">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
         <script>
           $(document).ready(function(){
 
-            $('.navbar').on('click', 'a', function (e) {
-               console.log('this is the click');
-               e.preventDefault();
-               $.ajax({
-                   type: 'POST',
-                   contentType: "application/json",
-                   url: 'api/department/read.php'
-                 }).done(function(data){
-                   alert("succeed to department list");
-
-                   data = $.parseJSON(data);
-
-                   $.each(data, function(i, item) {
-                     $('#department_list').append("<option value ='"+item.dept_id+"'>"+item.dept_name+"</option>");
-
-                   });
-
-                 }).fail(function(){
-                   alert("failed to read list from the system");
-                 });
-               return false;
-            });
-
-            // Search
-            $('#getSearch').click(function(){
-              // search
-
-              $.ajax({
-                type: 'GET',
+            $.ajax({
+                type: 'POST',
                 contentType: "application/json",
-                url: 'api/course/search.php',
-                data : {
-                  course_name : $('#course-name').val()
+                url: 'api/department/read.php'
+              }).done(function(data){
 
-                }
+                data = $.parseJSON(data);
+                $('#department_list').empty();
+                $('#department_list').append("<option>"+"SELECT"+"</option>");
 
-              }).done(function(response){
-                alert("working?");
-                //alert(response);
-                var tr = '';
-               //  $.each(response, function(index) {
-               //    alert(response[index].isbn);
-               //
-               //    tr += "<tr><td><input type='checkbox' id='mycheckbox' value='"+(response[index].isbn)+"'></td>";
-               //    tr += '<td><a href=bookDetailsPage.php?isbn='+(response[index].isbn)+'>'+response[index].title+'</a></td>';
-               //    tr += '<td><input type="text" name = "quantity"></td>';
-               //    //"'+quantity[response[index].isbn]+'"
-               //    tr+= '</tr>';
-               // });
-               //
-               // $('#bookTable').html(tr);
-
+                $.each(data, function(i, item) {
+                  $('#department_list').append("<option value ='"+item.dept_id+"'>"+item.dept_name+"</option>");
+                });
               }).fail(function(){
-                alert("fail to search");
+                alert("failed to read list from the system");
               });
+            return false;
+        });
+        $('#getSearch').click(function(){
+          $.ajax({
+            type: 'GET',
+            contentType: "application/json",
+            url: 'api/course/search.php',
+            data : {
+              course_id : $('#course-id').val(),
+              course_name : $('#course-name').val(),
+              dept : $('#department_list option:selected').val()
+            }
+          }).done(function(response){
+            th = '<tr><th>'+"course id" +'</th>';
+            th += '<th>'+"course name" +'</th>';
+            th += '<th>'+"days & times" +'</th>';
+            th += '<th>'+"classroom" +'</th>';
+            th += '<th>'+"units" +'</th></tr>';
 
-              return false;
-
+            tr ='';
+            $.each(response, function(i, item) {
+              tr += "<tr><td>"+item.id+"</td>";
+              tr += '<td><a href=courseDetails.php?id='+(item.id)+'>'+item.cname+'</a></td>';
+              tr += '<td>'+item.class_time+'</td>';
+              tr += '<td>'+item.classroom_id+'</td>';
+              tr += '<td>'+item.credits+'</td></tr>';
             });
+            $('#search-result-list > thead').empty().append(th);
+            $('#search-result-list').find('tbody').empty().append(tr);
 
+          }).fail(function(){
+            alert("fail to search");
+          });
+
+          return false;
 
         });
         </script>
@@ -108,10 +101,6 @@
             </div>
         </div>
 
-        <h6 id="footer"> <b>Contact Us:</b><br>
-        Phone: xxx-xxx-xxxx<br>
-        Email: us@university.edu<br>
-        Address: 1111 North St.<br>State, US 50000<br>
-        </h6>
+        <?php include('footer.php'); ?>
     </body>
 </html>
