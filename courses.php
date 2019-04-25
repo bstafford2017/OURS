@@ -6,9 +6,10 @@
         <link rel="stylesheet" href="css/courses.css" type="text/css"/>
     </head>
     <body>
-        <h2 id="welcome">Welcome User!</h2>
-        <?php include("navbar.php"); ?>
+      <h2 id="welcome">Welcome User!</h2>
+      <?php include("navbar.php"); ?>
 
+      <div id="main-container">
         <div id="search-container">
             <h2 class="header" style="">Course Search</h2>
             <div id="search">
@@ -27,8 +28,16 @@
         </div>
 
         <div id="search-result-container">
-          <table id="search-result-list">
+          <h2 class="header" style="">My Results</h2>
+          <table id="search-result-list" style="color:white;">
             <thead>
+              <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Time</th>
+                <th>Classroom</th>
+                <th>Units</th>
+              </tr>
             </thead>
             <tbody>
             </tbody>
@@ -100,7 +109,7 @@
                 None
             </div>
         </div>
-
-        <?php include('footer.php'); ?>
-    </body>
+      </div>
+  <?php include('footer.php'); ?>
+  </body>
 </html>
