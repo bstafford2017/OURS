@@ -14,7 +14,7 @@
         <h2 id="welcome">Welcome User!</h2>
         <?php include("navbar.php"); ?>
         <!-- show details of each course -->
-        <div>
+        <div id = "courseDetail_container">
           <table id = "courseDetail">
             <thead>
 
@@ -25,7 +25,9 @@
           <p id = "courseDetailHead">
           </p>
           <p id = "courseDetails"></p>
+          <input id="putCart" type="submit" value="PUT IN CART">
         </div>
+
 
         <?php include("footer.php"); ?>
 
@@ -70,7 +72,48 @@
             });
 
           });
+
+          $('#putCart').click(function(){
+            // get jwt decoded first
+            if(confirm("Are you sure?")){
+              //alert("here");
+              var jwt = getCookie('jwt');
+              $.ajax({
+                type: 'POST',
+                url: 'api/utils/validate_token.php',
+                data : JSON.stringify({
+                  'jwt' : jwt
+                })
+              }).done(function(result){
+                alert("granted");
+                $.ajax({
+                  type: 'POST',
+                  url: 'api/cart/create.php',
+                  data : JSON.stringify({
+                    'user_id' : result.data.id,
+                    'course_id' : <?php echo $course_id; ?>
+                  })
+                }).done(function(response){
+                  alert("Course is now in cart");
+                }).fail(function(){
+                  alert("Failed to register class");
+                });
+
+
+              }).fail(function(){
+                alert("You have to login first");
+                location.replace("index.php");
+              });
+
+
+
+          }else{
+            alert("");
+          }
+
+          });
         </script>
+        <script src = "js/cookie.js"></script>
     </body>
 
 </html>

@@ -38,8 +38,8 @@
       $token = array(
         "data" => array(
             "id" => $user->userid,
-            "name" => $user->username
-
+            "username" => $data->username,
+            "status" => $user->status
         )
       );
       http_response_code(200);

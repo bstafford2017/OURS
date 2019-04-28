@@ -7,6 +7,12 @@ class Database{
   private $password = "password";
   public  $conn;
 
+  // private $host = "127.0.0.1";
+  // private $db_name = "db";
+  // private $username = "root";
+  // private $password = "password";
+  // public  $conn;
+
   // get the database connection
   public function getConnection(){
       $this->conn = null;

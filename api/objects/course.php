@@ -30,26 +30,19 @@ class Course{
       return $stmt;
     }
 
+    function read_one(){
+      $sql = "SELECT * FROM `course` WHERE id = '$this->id'";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->execute();
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      // set values
+      $this->id = $row['id'];
+      $this->name = $row['cname'];
+      $this->class_time = $row['class_time'];
+
+    }
+
     function search(){
-      // result can be multiple rows
-      // $dropview = "DROP VIEW IF EXISTS `view_course`";
-      // $stmt = $this->conn->prepare($dropview);
-      // if($stmt->execute()){
-      //
-      // } else{
-      //   echo "what is the problem?\n";
-      //   $arr = $stmt->errorInfo();
-      //   echo print_r($arr);
-      // }
-      //
-      // $createview="CREATE VIEW `view_course`
-      // AS SELECT c.id, c.cname, c.credits, c.seaon_year,
-      // c.max_no_students, c.class_time, c.classroom_id,
-      // c.prerequisite_id, c.offer_dept, p.name
-      //
-      // FROM `course` c JOIN `person` p
-      // ON c.instructor_id = p.id
-      // ";
       $stmt = $this->conn->prepare($createview);
       // if($stmt -> execute()){
       if(func_num_args() == 2){
@@ -68,6 +61,12 @@ class Course{
           // var_dump("offer dept ".$offer_dept);
           $course_name = func_get_arg(1);
           $sql = "SELECT * FROM `view_course` WHERE cname LIKE '%".$course_name."%' ";
+        }
+
+        if(func_get_arg(0) == 3){
+          // var_dump("offer dept ".$offer_dept);
+          $faculty_name = func_get_arg(1);
+          $sql = "SELECT * FROM `view_course` WHERE name LIKE '%".$faculty_name."%' ";
         }
 
       }

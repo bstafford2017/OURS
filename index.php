@@ -40,7 +40,10 @@
                }).done(function(data){
                    if(data){
                      // login success
-                     //alert("login success");
+                     // set jwt in cookie
+                     //alert(data.jwt);
+
+                     setCookie("jwt", data.jwt, 1);
                      location.replace("main.php");
                    }
 
@@ -52,7 +55,9 @@
 
             });
           });
+
         </script>
+        <script src = "js/cookie.js"></script>
 
     </body>
 </html>

@@ -25,14 +25,19 @@ if(isset($_GET["course_name"])){
 if(isset($_GET["dept"])){
   $dept =$_GET["dept"];
 }
+if(isset($_GET["faculty"])){
+  $faculty_name =$_GET["faculty"];
+}
 
-if($course_id == NULL && $course_name == NULL){
+if($course_id == NULL && $course_name == NULL && $faculty_name ==NULL){
   // SEARCH W/ DEPT
   $stmt = $course->search(0, $dept);
-} else if(!empty($course_id) && empty($course_name)){
+} else if(!empty($course_id) && empty($course_name) && empty($faculty_name)){
   $stmt = $course->search(1, $course_id);
-} else if (!empty($course_name) && empty($course_id)){
+} else if (!empty($course_name) && empty($course_id) && empty($faculty_name)){
   $stmt = $course->search(2, $course_name);
+} else if (empty($course_name) && empty($course_id) && !empty($faculty_name)){
+  $stmt =  $course->search(3, $faculty_name);
 }
 
 $num = $stmt->rowCount();

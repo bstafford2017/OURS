@@ -9,37 +9,37 @@
         <h2 id="welcome">Welcome User!</h2>
 
         <?php include("navbar.php"); ?>
-
-        <div id="schedule">
-            <h2 class="header">My Schedule</h2>
-            <div class="big-table">
-                <table>
-
-                </table>
-            </div>
-        </div>
-
-        <div id="deadlines">
-            <h3 class="header">My Deadlines</h3>
-            <div class="table">
-
-            </div>
-        </div>
-
-        <div id="holds">
-            <h3 class="header">My Holds</h3>
-            <div class="table">
-
-            </div>
-        </div>
-
-        <div id="advisor">
-            <h3 class="header">My Advisor</h3>
-            <div class="table">
-
-            </div>
-        </div>
+        <div id = "content"></div>
 
         <?php include('footer.php'); ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+        <script>
+          $(document).ready(function(){
+
+            //alert("document is ready?");
+            var jwt = getCookie('jwt');
+            $.ajax({
+              type: 'POST',
+              url: 'api/utils/validate_token.php',
+              data : JSON.stringify({
+                'jwt' : jwt
+              })
+            }).done(function(result){
+              $('#content').load("html/home.html");
+                // alert(result.data.id);
+
+                // home page html will be here
+            }).fail(function(){
+              alert("You have to login first");
+              location.replace("index.php");
+            });
+
+              return false;
+          });
+
+
+        </script>
+        <script src = "js/cookie.js"></script>
+
     </body>
 </html>

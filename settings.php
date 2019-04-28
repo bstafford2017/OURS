@@ -29,36 +29,17 @@
 
        <?php include('footer.php'); ?>
 
-        <!-- <?php
-        // if(isset($_POST['submit'])){
-        //     $name = $_POST['name'];
-        //     $username = $_POST['username'];
-        //     $password = $_POST['password'];
-        //     $confirm = $_POST['confirm-password'];
-        //     if($password != $confirm){
-        //         echo '<script type="text/javascript">alert("Passwords do not match.");</script>';
-        //     } else {
-        //         echo 'TEST';
-        //     }
-        // }
-        ?> -->
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
         <script>
             $(document).ready(function() {
                 $('#submit').click(function(){
-
-                    // Check data first??
-                    // Get rid of php that checks input??
-
                     $.ajax({
                         type: 'GET',
                         contentType: "application/json",
                         url: 'api/settings/update.php',
                         data : {
-                            name: $('#name').val()
-                            username: $('#usernmae').val()
-                            password: $('password').val()
+                            name: $('#name').val(),
+                            username: $('#usernmae').val(),
+                            password: $('password').val(),
                             confirm-password: $('confirm-password').val()
                         }
                     }).done(function(){
@@ -69,6 +50,8 @@
                 });
             });
         </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+
 
     </body>
 </html>

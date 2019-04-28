@@ -12,42 +12,85 @@
         <div id="main-container">
             <h2 class="header" style="">My Search</h2>
             <div id="search-container">
-                <form>
-                    <input id="search" type="text" placeholder="Search for a faculty member . . ." required>
-                    <input id="submit-button" type="submit" value="Submit">
-                </form>
+               <input id="search" type="text" placeholder="Search for a faculty member . . ." required>
+               <input id="submit-button" type="submit" value="Submit">
+            </div>
+
+            <div>
+              <table id = "faculty-search-result">
+                <thead>
+
+                </thead>
+
+                <tbody>
+                </tbody>
+              </table>
+
             </div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
         <script>
         $(document).ready(function(){
-            $('#submit-button').click(function() {
-                $.ajax({
-                    type: 'GET',
-                    contentType: "application/json",
-                    url: 'api/faculty/search.php',
-                    data : {
-                        name : $('#search').val()
-                    }
-                }).done(function(resposne){
-                    //  $.each(response, function(index) {
-                    //    alert(response[index].isbn);
-                    //
-                    //    tr += "<tr><td><input type='checkbox' id='mycheckbox' value='"+(response[index].isbn)+"'></td>";
-                    //    tr += '<td><a href=bookDetailsPage.php?isbn='+(response[index].isbn)+'>'+response[index].title+'</a></td>';
-                    //    tr += '<td><input type="text" name = "quantity"></td>';
-                    //    //"'+quantity[response[index].isbn]+'"
-                    //    tr+= '</tr>';
-                    // });
-                    //
-                    // $('#bookTable').html(tr);
-                }).fail(function(){
-                    alert("No results for search");
-                });
+
+            $.ajax({
+              type : 'POST',
+              contentType: "application/json",
+              url: 'api/faculty/search.php'
+            }).done(function(response){
+              // alert("working");
+              th = '<tr><th>'+"Name" +'</th>';
+              th += '<th>'+"Position" +'</th>';
+              th += '<th>'+"Office Address" +'</th>';
+
+              // data = $.parseJSON(response);
+              tr = '';
+              $.each(response, function(i, item) {
+                // alert(item.name);
+                tr += '<tr><td><a href=facultyDetails.php?name='+(item.name)+'>'+item.name+'</a></td>';
+                tr += '<td>'+item.position +'</td>';
+                tr += '<td>'+item.offcie_addr+'</td></tr>';
+              });
+
+              $('#faculty-search-result > thead').empty().append(th);
+              $('#faculty-search-result').find('tbody').empty().append(tr);
+
+            }).fail(function(){
+              alert("failed..");
             });
+            return false;
+
+        });
+
+        $('#submit-button').click(function() {
+            $.ajax({
+                type: 'GET',
+                contentType: "application/json",
+                url: 'api/faculty/search_one.php',
+                data : {
+                    'name' : $('#search').val()
+                }
+            }).done(function(response){
+              //alert("working");
+              $("#faculty-search-result").find("tr:gt(0)").empty();
+
+              //alert("name ? "+response.name);
+              var tblRow='';
+              tblRow = '<tr><td><a href=facultyDetails.php?id='+(response.name)+'>'+response.name+'</a></td>';
+              tblRow += '<td>'+response.position +'</td>';
+              tblRow += '<td>'+response.offcie_addr+'</td></tr>';
+              //alert(tblRow);
+              // // $('#faculty-search-result > thead').html("");
+              $('#faculty-search-result').find('tbody').append(tblRow);
+            }).fail(function(){
+                alert("No results for search");
+            });
+
+            return false;
         });
         </script>
+
+        <script type="text/javascript" src="js/Pagination.js"></script>
 
         <?php include('footer.php'); ?>
     </body>

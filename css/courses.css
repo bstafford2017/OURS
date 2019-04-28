@@ -3,6 +3,23 @@ html {
     background-image: url(https://jlgarchitects.com/wp-content/uploads/2018/07/Untitled-1.jpg);
 }
 
+table, th, td{
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+#courseDetail_container{
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  z-index: 15;
+  top: 30%;
+  left: 30%;
+  margin: -100px 0 0 -150px;
+
+}
+
 #welcome {
     color: white;;
     text-align: center;
