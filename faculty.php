@@ -76,7 +76,7 @@
 
               //alert("name ? "+response.name);
               var tblRow='';
-              tblRow = '<tr><td><a href=facultyDetails.php?id='+(response.name)+'>'+response.name+'</a></td>';
+              tblRow = '<tr><td><a href=facultyDetails.php?name='+(response.name)+'>'+response.name+'</a></td>';
               tblRow += '<td>'+response.position +'</td>';
               tblRow += '<td>'+response.offcie_addr+'</td></tr>';
               //alert(tblRow);

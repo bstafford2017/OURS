@@ -38,14 +38,14 @@
         <script>
         $(document).ready(function() {
             //alert("start serach?");
-            var id = "<?php echo $name; ?>";
+            var name = "<?php echo $name; ?>";
 
             $.ajax({
               type: 'GET',
               contentType: "application/json",
               url: 'api/faculty/search_one.php',
               data : {
-                'name' : id
+                'name' : name
               }
 
             }).done(function(response){
