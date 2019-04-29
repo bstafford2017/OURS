@@ -1,5 +1,5 @@
 <?php
-  //$course_id = $_GET['id'];
+  $course_id = $_GET['id'];
 
 ?>
 
@@ -17,7 +17,7 @@
         <div id = "courseDetail_container">
           <h2 class="header">My Course Details</h2>
           <div id="course-main-container">
-            <table id = "courseDetail">
+            <table id = "courseDetail" style="color:white;">
               <thead>
                 <th>
 
