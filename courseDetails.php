@@ -1,5 +1,5 @@
 <?php
-  $course_id = $_GET['id'];
+  //$course_id = $_GET['id'];
 
 ?>
 
@@ -8,24 +8,30 @@
     <head>
         <title>OURS</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link rel="stylesheet" href="css/courses.css" type="text/css"/>
+        <link rel="stylesheet" href="css/courseDetails.css" type="text/css"/>
     </head>
     <body>
         <h2 id="welcome">Welcome User!</h2>
         <?php include("navbar.php"); ?>
         <!-- show details of each course -->
         <div id = "courseDetail_container">
-          <table id = "courseDetail">
-            <thead>
+          <h2 class="header">My Course Details</h2>
+          <div id="course-main-container">
+            <table id = "courseDetail">
+              <thead>
+                <th>
 
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-          <p id = "courseDetailHead">
-          </p>
-          <p id = "courseDetails"></p>
-          <input id="putCart" type="submit" value="PUT IN CART">
+                </th>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <p id = "courseDetailHead">
+            </p>
+            <p id = "courseDetails">
+            </p>
+          </div>
+          <center><input id="putCart" type="submit" value="PUT IN CART"></center>
         </div>
 
 
