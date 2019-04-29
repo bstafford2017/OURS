@@ -6,31 +6,33 @@
     <head>
         <title>OURS</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="css/facultyDetails.css" type="text/css"/>
     </head>
     <body>
         <h2 id="welcome">Welcome User!</h2>
 
         <?php include("navbar.php"); ?>
         <div id = "content">
-          <table id = "faculty_basic_info">
-            <thead>
+          <h2 class="header">My Faculty Member</h2>
+          <div id="content-subcontainer">
+            <table id = "faculty_basic_info">
+              <thead>
 
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
 
-          <br/><br/>
-          <strong>Biography </strong><br/>
-          <p id="biography"></p>
-          <strong>Research Interest</strong> <br/>
-          <p id ="research_interest"></p>
-          <strong>Education </strong><br/>
-          <p id ="education"></p>
+            <br/><br/>
+            <strong>Biography </strong><br/>
+            <p id="biography"></p>
+            <strong>Research Interest</strong> <br/>
+            <p id ="research_interest"></p>
+            <strong>Education </strong><br/>
+            <p id ="education"></p>
 
-
+          </div>
         </div>
 
         <?php include('footer.php'); ?>
