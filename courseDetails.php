@@ -1,5 +1,5 @@
 <?php
-  //$course_id = $_GET['id'];
+  $course_id = $_GET['id'];
 
 ?>
 

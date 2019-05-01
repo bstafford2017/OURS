@@ -5,5 +5,6 @@
     <li><a href="cart.php">View Cart</a></li>
     <li><a href="faculty.php">Faculty</a></li>
     <li><a href="settings.php">Settings</a></li>
+    <li><a href="academic_record.php"> Academic Record </a></li>
     <li style="float:right"><a href="index.php">Logout</a></li>
 </ul>

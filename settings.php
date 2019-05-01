@@ -22,36 +22,86 @@
                 <input id="password" type="password" placeholder="Enter Password" required><br><br>
                 Confirm Password:<br>
                 <input id="confirm-password" type="password" placeholder="Enter Confirm Password" required><br><br><br>
-                <input type="submit" value="Submit">
+                <input id ="edit_userinfo" type="submit" value="Submit">
             </form>
         </div>
         </center>
 
        <?php include('footer.php'); ?>
 
-        <script>
-            $(document).ready(function() {
-                $('#submit').click(function(){
-                    $.ajax({
-                        type: 'GET',
-                        contentType: "application/json",
-                        url: 'api/settings/update.php',
-                        data : {
-                            name: $('#name').val(),
-                            username: $('#usernmae').val(),
-                            password: $('password').val(),
-                            confirm-password: $('confirm-password').val()
-                        }
-                    }).done(function(){
-                        alert("Successfully updated user information");
-                    }).fail(function(){
-                        alert("Failed to update user information");
-                    });
-                });
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+       <script src = "js/cookie.js"></script>
+
+       <script>
+        $(document).ready(function(){
+
+          var jwt = getCookie('jwt');
+
+          $.ajax({
+            type: 'POST',
+            url: 'api/utils/validate_token.php',
+            data : JSON.stringify({
+              'jwt' : jwt
+            })
+          }).done(function(result){
+            jwt_id = result.data.id;
+            jwt_name = result.data.name;
+            jwt_usernmae = result.data.username;
+
+            $('#name').val(result.data.name);
+            $('#username').val(result.data.username);
+
+          }).fail(function(){
+            alert("You have no authority to change private information");
+
+          });
+
+          return false;
+        });
+
+        $('#edit_userinfo').click(function(){
+          var password = $('#password').val();
+          var con_password = $('#confirm-password').val();
+          if(password != con_password){
+            alert("Passwords do not match.");
+            exit();
+          }
+
+          // check there is any changes
+          name = $('#name').val();
+          username = $('#username').val();
+
+          if(name == jwt_name && username  == jwt_usernmae){
+            alert("No changes");
+          } else{
+
+            $.ajax({
+              type : 'POST',
+              url : 'api/user/update.php',
+              data :{
+                'id' : jwt_id,
+                'name' : name,
+                'username' : username
+              }
+            }).done(function(response){
+
+              $('#name').val(name);
+              $('#username').val(username);
+
+            }).fail(function(){
+              alert("failed to change info");
             });
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+          }
+
+          return false;
+
+        });
+       </script>
 
 
-    </body>
+
+
+
+     </body>
 </html>

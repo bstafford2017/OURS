@@ -103,10 +103,17 @@ class User{
     }
 
     /*
-      grab users information
+      change users information
     */
-    function read(){
+    function update(){
+      $sql ="UPDATE Person SET `name` = '$this->name', `username` = '$this->username' WHERE id = $this->userid";
+      $stmt = $this->conn->prepare($sql);
 
+      if($stmt->execute()){
+        return true;
+      } else{
+        return false;
+      }
     }
 
 

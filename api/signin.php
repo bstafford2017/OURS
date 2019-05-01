@@ -38,6 +38,7 @@
       $token = array(
         "data" => array(
             "id" => $user->userid,
+            "name" => $user->name,
             "username" => $data->username,
             "status" => $user->status
         )
