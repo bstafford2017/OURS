@@ -15,7 +15,7 @@
         <div id = "content">
           <h2 class="header">My Faculty Member</h2>
           <div id="content-subcontainer">
-            <table id = "faculty_basic_info">
+            <table id = "faculty_basic_info" style="color:white;">
               <thead>
 
               </thead>
@@ -53,9 +53,9 @@
             }).done(function(response){
 
               var th = '';
-              th += '<tr><td>'+"Name" +'</td>';
-              th += '<td>'+"Position" +'</td>';
-              th += '<td>'+"Offcie Address"+'</td></tr>';
+              th += '<tr><td><b>'+"Name" +'</b></td>';
+              th += '<td><b>'+"Position" +'</b></td>';
+              th += '<td><b>'+"Offcie Address"+'</b></td></tr>';
 
               var tr ='';
               tr += '<tr><td>'+response.name +'</td>';
