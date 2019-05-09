@@ -1,0 +1,40 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(https://jlgarchitects.com/wp-content/uploads/2018/07/Untitled-1.jpg);
+}
+
+#welcome {
+    color: white;;
+    text-align: center;
+    text-shadow: 2px 2px rgb(0,0,0,0.5);
+}
+
+.header {
+    color: white;;
+    text-shadow: 2px 2px rgb(0,0,0,0.5);
+}
+
+#main-container {
+    height: 45%;
+    width: 65%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#search-container {
+    background-color: black;
+    opacity: 0.75;
+    box-shadow: 0px 8px 16px 0px rgb(0,0,0,0.5);
+    padding: 20px
+}
+
+#search {
+    height: 45%;
+    width: 80%;
+    font-size: 25px;
+}
+
+#submit-button {
+    font-size: 25px;
+    margin-left: 20px;
+}

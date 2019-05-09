@@ -1,0 +1,49 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(https://jlgarchitects.com/wp-content/uploads/2018/07/Untitled-1.jpg);
+    
+}
+
+#welcome {
+    color: white;;
+    text-align: center;
+    text-shadow: 2px 2px rgb(0,0,0,0.5);
+}
+
+.header {
+  color: white;;
+  text-shadow: 2px 2px rgb(0,0,0,0.5);
+}
+
+#cart-container {
+  height: 45%;
+  width: 65%;
+  position: relative;
+  margin : 0 auto;
+}
+
+table{
+  width: 1030px;
+}
+
+th{
+  text-align: left;
+}
+
+table, th, td{
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+th, td{
+  padding: 10px;
+
+}
+
+tr:nth-child(odd){
+  background-color: rgba(194, 194, 194, 0.8);
+}
+
+tr:nth-child(even){
+  background-color: rgb(255, 255, 255, 0.8);
+}
