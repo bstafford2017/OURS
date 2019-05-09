@@ -4,7 +4,23 @@
 
 <html>
   <head>
+    <style>
+      table, th, td{
 
+        text-align: center;
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+
+      table{
+        color : white;
+        float: left;
+        height: 20%;
+        width: 100%;
+        background-color: rgb(0,0,0,0.75);
+        box-shadow: 0px 8px 16px 0px rgb(0,0,0,0.5);
+      }
+    </style>
   </head>
 
   <body>
